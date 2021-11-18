@@ -1,0 +1,18 @@
+<div class="card-text">
+  <h6>Want to work with <%= member.name %>?</h6>
+  <b><%= member.votes_count %></b> <%= "person".pluralize(member.votes_count) %> have said Yes!
+</div>
+
+<div class="card-action">
+  <% if !signed_in? %>
+    <%= link_to " Yes!", new_user_session_path, class: "btn btn-link text-primary fa fa-thumbs-o-up" %>
+  <% elsif current_user.has_cast_vote?(member.id) %>
+    <button class="btn btn-link text-success fa fa-check-circle-o"> Voted! </button>
+  <% else %>
+    <%= form_with url: vote_member_path(member), method: :post, local: false do %>
+      <%= button_tag(class: "btn btn-link text-primary fa fa-thumbs-o-up") do %>
+        Yes!
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="<%= url_for(member.image) if member.image.attached? %>" class="card-img">
+    </div>
+
+    <div class="col-md-10">
+      <div class="card-body">
+        <div class="card-info">
+          <h5 class="card-name"><%= member.name %></h5>
+          <h6 class="card-title text-muted"><%= member.title %></h6>
+          <small class="text-muted"><%= member.bio %></small>
+        </div>
+
+        <div id="card-vote-<%= member.id %>" class="card-vote">
+          <%= render 'vote', member: member %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

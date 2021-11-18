@@ -1,0 +1,3 @@
+# Link to CORS endpoint
+proxy:
+  host: 'https://coding-assignment.g2crowd.com'

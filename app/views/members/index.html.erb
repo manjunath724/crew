@@ -1,0 +1,7 @@
+<%= render @members %>
+
+<% if @members.blank? %>
+  <div class="card text-center">
+    Please refresh the page to load members
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<div class='container-fluid'>
+  <% if flash.present? %>
+    <div class="alert alert-<%= notice ? "success" : "danger" %> text-center">
+      <strong><%= notice || alert %></strong>
+    </div>
+  <% end %>
+</div>

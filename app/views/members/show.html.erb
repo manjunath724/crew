@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @member.title %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @member.bio %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @member.active %>
+</p>
+
+<p>
+  <strong>Votes count:</strong>
+  <%= @member.votes_count %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

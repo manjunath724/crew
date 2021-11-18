@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <i class="fa fa fa-google">2 Crowd Team Roster</i>
+    </a>
+
+    <div class="d-flex text-white text-right text-decoration-none">
+      <% if signed_in? %>
+        <span class="btn btn-link text-white me-2" style="cursor: default">
+          <i class="fa fa fa-user-circle-o"> <%= current_user&.email %> </i>
+        </span>
+        <a href="<%= destroy_user_session_path %>" data-method="delete" class="btn btn-link text-white me-2">
+          <i class="fa fa fa-sign-out"> Sign Out </i>
+        </a>
+      <% else %>
+        <a href="<%= new_user_session_path %>" class="btn btn-link text-white me-2">
+          <i class="fa fa fa-sign-in"> Sign In </i>
+        </a>
+        <a href="<%= new_user_registration_path %>" class="btn btn-link text-white me-2">
+          <i class="fa fa fa-user-plus"> Sign Up </i>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</nav>
